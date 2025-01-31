@@ -87,7 +87,7 @@ app.put('/laptops/:id', (req, res) => {
 app.delete('/laptops/:id', (req, res) => {
     const id = parseInt(req.params.id);
     console.log('Eliminando laptop con id:', id);
-    
+    res.send({ id: id });
     const index = laptops.findIndex(l => l.id === id);
     if (index !== -1) {
         laptops = laptops.filter(l => l.id !== id);
